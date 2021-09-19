@@ -1,5 +1,6 @@
 import 'package:chat_bubbles/bubbles/bubble_special_one.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class RegistrationPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: const Text('Registration'),
+        title: Text('registration'.tr),
       ),
       body: Column(
         children: <Widget>[
@@ -19,9 +20,9 @@ class RegistrationPage extends StatelessWidget {
               Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(25),
-                child: const Text(
-                  "Let's gonna start",
-                  style: TextStyle(fontSize: 25),
+                child: Text(
+                  'lets_start'.tr,
+                  style: const TextStyle(fontSize: 25),
                 ),
               ),
               const BubbleSpecialOne(
@@ -54,10 +55,8 @@ class RegistrationPage extends StatelessWidget {
                   children: [
                     const Expanded(
                       child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Email',
-                            hintText: 'Enter valid mail id as abc@gmail.com'),
+                        decoration:
+                            InputDecoration(border: OutlineInputBorder()),
                       ),
                     ),
                     IconButton(

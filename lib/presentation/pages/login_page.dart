@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:registration_app/UserInterface/Pages/registration_page.dart';
+import 'package:registration_app/presentation/pages/registration_page.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -18,32 +19,34 @@ class LoginPage extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(20))),
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: TextField(
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Email',
-                      hintText: 'Enter valid mail id as abc@gmail.com'),
+                      border: const OutlineInputBorder(),
+                      labelText: 'email'.tr,
+                      hintText: 'enter_valid_email'.tr),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Password',
-                      hintText: 'Enter your secure password'),
+                      border: const OutlineInputBorder(),
+                      labelText: 'password'.tr,
+                      hintText: 'enter_password'.tr),
                 ),
               ),
               TextButton(
                 onPressed: () {
                   //TODO FORGOT PASSWORD SCREEN GOES HERE
                 },
-                child: const Text(
-                  'Forgot Password',
-                  style: TextStyle(
+                child: Text(
+                  'forgot_password'.tr,
+                  style: const TextStyle(
                       color: Colors.blue,
                       fontSize: 15,
                       decoration: TextDecoration.underline),
@@ -57,9 +60,9 @@ class LoginPage extends StatelessWidget {
                     minimumSize: const Size(double.infinity, 50),
                   ),
                   onPressed: () {},
-                  child: const Text(
-                    'Login',
-                    style: TextStyle(
+                  child: Text(
+                    'login'.tr,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 25,
                     ),
@@ -70,9 +73,9 @@ class LoginPage extends StatelessWidget {
                 alignment: Alignment.center,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-                child: const Text(
-                  'Or',
-                  style: TextStyle(fontSize: 25),
+                child: Text(
+                  'or'.tr,
+                  style: const TextStyle(fontSize: 25),
                 ),
               ),
               Padding(
@@ -85,9 +88,9 @@ class LoginPage extends StatelessWidget {
                   onPressed: () {
                     Get.to(const RegistrationPage());
                   },
-                  child: const Text(
-                    'Request account',
-                    style: TextStyle(
+                  child: Text(
+                    'request_account'.tr,
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 25,
                     ),
