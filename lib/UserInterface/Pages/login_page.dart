@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:registration_app/UserInterface/Pages/registration_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -80,7 +82,9 @@ class LoginPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity, 50),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(const RegistrationPage());
+                  },
                   child: const Text(
                     'Request account',
                     style: TextStyle(
