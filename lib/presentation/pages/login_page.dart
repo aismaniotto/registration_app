@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:registration_app/core/routes/app_routes.dart';
 import 'package:registration_app/presentation/pages/registration_page.dart';
 import 'package:get/get.dart';
 
@@ -56,10 +57,6 @@ class LoginPage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 50),
-                  ),
-                  onPressed: () {},
                   child: Text(
                     'login'.tr,
                     style: const TextStyle(
@@ -67,6 +64,10 @@ class LoginPage extends StatelessWidget {
                       fontSize: 25,
                     ),
                   ),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 50),
+                  ),
+                  onPressed: () {},
                 ),
               ),
               Container(
@@ -82,12 +83,6 @@ class LoginPage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 50),
-                  ),
-                  onPressed: () {
-                    Get.to(const RegistrationPage());
-                  },
                   child: Text(
                     'request_account'.tr,
                     style: const TextStyle(
@@ -95,6 +90,12 @@ class LoginPage extends StatelessWidget {
                       fontSize: 25,
                     ),
                   ),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 50),
+                  ),
+                  onPressed: () {
+                    Get.toNamed(Routes.REGISTRATION);
+                  },
                 ),
               ),
             ],
