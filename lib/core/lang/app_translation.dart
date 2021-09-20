@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'en.dart';
 import 'pt.dart';
 
-class TranslationService extends Translations {
+class AppTranslation extends Translations {
   static Locale? get locale => Get.deviceLocale;
   static const fallbackLocale = Locale('en');
   @override
