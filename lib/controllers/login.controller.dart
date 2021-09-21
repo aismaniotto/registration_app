@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:registration_app/core/validators/email.validator.dart';
+import 'package:registration_app/core/validators/password.validator.dart';
 
 class LoginController extends GetxController {
   final loginFormKey = GlobalKey<FormState>();
@@ -14,19 +16,10 @@ class LoginController extends GetxController {
   }
 
   String? validateEmail(String value) {
-    String pattern =
-        r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]"
-        r"{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]"
-        r"{0,253}[a-zA-Z0-9])?)*$";
-    RegExp regex = RegExp(pattern);
-    if (!regex.hasMatch(value)) {
-      return 'enter_valid_email'.tr;
-    } else {
-      return null;
-    }
+    return EmailValidator.test(value);
   }
 
   String? validatePassword(String value) {
-    return value.length < 3 ? 'password_too_short'.tr : null;
+    return PasswordValidator.test(value);
   }
 }
