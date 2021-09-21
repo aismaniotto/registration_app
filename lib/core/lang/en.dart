@@ -3,6 +3,7 @@ const Map<String, String> en = {
   'enter_valid_email': 'Enter valid mail id as abc@gmail.com',
   'password': 'Password',
   'enter_password': 'Enter your secure password',
+  'password_too_short': 'Password too short',
   'forgot_password': 'Forgot password',
   'login': 'Login',
   'or': 'or',
