@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:registration_app/controllers/login.controller.dart';
+import 'package:registration_app/controllers/login_controller.dart';
 import 'package:registration_app/core/routes/app_routes.dart';
 import 'package:get/get.dart';
+import 'package:registration_app/presentation/widgets/loader_widget.dart';
 
 class LoginPage extends GetView<LoginController> {
-  LoginPage({Key? key}) : super(key: key);
-
-  final LoginController c = Get.put(LoginController());
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +15,7 @@ class LoginPage extends GetView<LoginController> {
       key: controller.loginFormKey,
       child: Column(
         children: [
+          Obx(() => controller.isBusy.value ? LoaderWidget() : Container()),
           Center(
             child: Image.asset('assets/images/bear-logo.jpeg'),
           ),

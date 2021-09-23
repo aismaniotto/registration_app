@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:registration_app/controllers/login_controller.dart';
 import 'package:registration_app/core/routes/app_pages.dart';
-import 'package:registration_app/presentation/pages/registration_page.dart';
-import 'package:registration_app/presentation/pages/login_page.dart';
 import 'package:registration_app/core/lang/app_translation.dart';
 import 'package:registration_app/core/routes/app_routes.dart';
+import 'package:registration_app/services/auth_service.dart';
 
 void main() {
+  Get.lazyPut<AuthService>(() => AuthServiceImpl());
+  Get.lazyPut<LoginController>(() => LoginController());
+
   runApp(const MyApp());
 }
 
