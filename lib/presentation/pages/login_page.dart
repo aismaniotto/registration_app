@@ -3,7 +3,6 @@ import 'package:get/route_manager.dart';
 import 'package:registration_app/controllers/login_controller.dart';
 import 'package:registration_app/core/routes/app_routes.dart';
 import 'package:get/get.dart';
-import 'package:registration_app/presentation/widgets/loader_widget.dart';
 
 class LoginPage extends GetView<LoginController> {
   const LoginPage({Key? key}) : super(key: key);
@@ -15,7 +14,6 @@ class LoginPage extends GetView<LoginController> {
       key: controller.loginFormKey,
       child: Column(
         children: [
-          Obx(() => controller.isBusy.value ? LoaderWidget() : Container()),
           Center(
             child: Image.asset('assets/images/bear-logo.jpeg'),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:registration_app/controllers/login_controller.dart';
 import 'package:registration_app/core/routes/app_pages.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       translations: AppTranslation(),
       initialRoute: Routes.LOGIN, // logic to auth
       getPages: AppPages.routes,
+      builder: EasyLoading.init(),
     );
   }
 }

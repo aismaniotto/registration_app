@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.3.8
   chat_bubbles: ^1.1.0
+  flutter_easyloading: ^3.0.3
 
 dev_dependencies:
   flutter_test:

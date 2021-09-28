@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:registration_app/core/validators/email.validator.dart';
 import 'package:registration_app/core/validators/password.validator.dart';
@@ -9,11 +10,10 @@ class LoginController extends GetxController {
 
   String username = '';
   String password = '';
-  RxBool isBusy = false.obs;
 
   void login() async {
     if (loginFormKey.currentState!.validate()) {
-      isBusy.value = true;
+      EasyLoading.show(maskType: EasyLoadingMaskType.black);
 
       //todo: decide the best way to handle errors
 
@@ -24,7 +24,7 @@ class LoginController extends GetxController {
       // save the token on secure storage
       // save the user on shared preferences
 
-      isBusy.value = false;
+      EasyLoading.dismiss();
     }
   }
 
