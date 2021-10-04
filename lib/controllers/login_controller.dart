@@ -4,6 +4,9 @@ import 'package:get/get.dart';
 import 'package:registration_app/core/validators/email.validator.dart';
 import 'package:registration_app/core/validators/password.validator.dart';
 import 'package:registration_app/services/auth_service.dart';
+import 'package:registration_app/services/secure_store_service.dart';
+import 'package:registration_app/services/shared_preferences_service.dart';
+import 'dart:convert';
 
 class LoginController extends GetxController {
   final loginFormKey = GlobalKey<FormState>();
@@ -21,8 +24,11 @@ class LoginController extends GetxController {
       final token = await authService.auth(username, password);
       final user = await authService.getUser(token);
 
-      // save the token on secure storage
-      // save the user on shared preferences
+      final secureStorage = Get.find<SecureStoreService>();
+      secureStorage.write('token', token.token);
+
+      final sharedPreferences = Get.find<SharedPreferencesService>();
+      sharedPreferences.write('userJson', json.encode(user));
 
       EasyLoading.dismiss();
     }

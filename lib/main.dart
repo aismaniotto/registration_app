@@ -6,10 +6,17 @@ import 'package:registration_app/core/routes/app_pages.dart';
 import 'package:registration_app/core/lang/app_translation.dart';
 import 'package:registration_app/core/routes/app_routes.dart';
 import 'package:registration_app/services/auth_service.dart';
+import 'package:registration_app/services/secure_store_service.dart';
+import 'package:registration_app/services/shared_preferences_service.dart';
 
 void main() {
-  Get.lazyPut<AuthService>(() => AuthServiceImpl());
+  // controllers
   Get.lazyPut<LoginController>(() => LoginController());
+
+  // services
+  Get.lazyPut<AuthService>(() => AuthServiceImpl());
+  Get.lazyPut<SecureStoreService>(() => SecureStoreServiceImpl());
+  Get.lazyPut<SharedPreferencesService>(() => SharedPreferencesServiceImpl());
 
   runApp(const MyApp());
 }
